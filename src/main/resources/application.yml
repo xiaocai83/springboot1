@@ -1,0 +1,48 @@
+
+
+
+##更改日志级别
+##指定日志文件的位置:例如该项目在E盘，则日志文件在E:/spring
+#logging:
+#  level:
+#    com.cjs: debug
+#  file:
+#    path: /spring/log
+
+#thymeleaf配置
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    servlet:
+      content-type: text/html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+  profiles:
+    include: druid
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    druid:
+      initial-size: 8
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mappers/*.xml
+
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    encoding:
+      force: true
+      charset: UTF-8
+    context-path: /springboot
+  port: 8080
