@@ -29,6 +29,11 @@ public class HelloController {
 
         return "index";
     }
+    @RequestMapping("/toSuccess")
+    public String toSuccess(){
+
+        return "suc";
+    }
 
 
     @RequestMapping("/hello")
