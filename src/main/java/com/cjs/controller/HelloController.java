@@ -35,6 +35,12 @@ public class HelloController {
         return "suc";
     }
 
+    @RequestMapping("/toTest")
+    public String toTest(){
+
+        return "suc";
+    }
+
 
     @RequestMapping("/hello")
     public String Hello(){
