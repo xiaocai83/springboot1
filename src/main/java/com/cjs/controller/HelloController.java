@@ -36,7 +36,7 @@ public class HelloController {
         List<Account> list = helloService.queryAll();
         for (Account account : list) {
             System.out.println(account);
-            System.out.println("测试");
+            System.out.println("测试github");
         }
         System.out.println("controller中");
         return "suc";
